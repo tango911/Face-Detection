@@ -17,8 +17,10 @@ def detect(gray, frame):
         roi_color = frame[y:y+h, x:x+w]
         eyes = eye_cascade.detectMultiScale(roi_gray, 1.3, 2)
         smile = smile_cascade.detectMultiScale(roi_gray, 1.5, 22)
+        #face Detection
         for (ex, ey, ew, eh) in eyes:
             cv2.rectangle(roi_color, (ex, ey), (ex+ew, ey+eh), (0, 255, 0), 2)
+        # s,ile detection
         for (sx, sy, sw, sh) in smile:
             cv2.rectangle(roi_color, (sx, sy), (sx+sw, sy+sh), (0, 0, 255), 2)
             cv2.putText(frame,"Happy",(x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 2, cv2.LINE_AA)
@@ -33,5 +35,6 @@ while True:
     cv2.imshow('Video', canvas)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-video_capture.release()
-cv2.destroyAllWindows()
+
+video_capture.release() # We turn the webcam off.
+cv2.destroyAllWindows() # We destroy all the windows inside which the images were displayed.
