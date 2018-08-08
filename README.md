@@ -13,4 +13,6 @@ A couple Haar-like features. Source: docs.opencv.org
 1. Introduction                                                                                                                           
 2. Preparing for detection                                                                                                               
 3. Detection on Image                                                                                                                     
-4. Detection on live Vedio                                                                                                                  
+4. Detection on live Vedio    
+
+[face_detection.ipynb](https://github.com/tango911/Face-Detection/blob/master/Face%20Detection.ipynb)
